@@ -1,14 +1,20 @@
 NAME = push_swap
 
-SRC = main.c
+CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
-OBJS = $(SRC:.c=.o)
+SRCS = main.c
+
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS)
@@ -18,4 +24,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY all clean fclean re
+.PHONY: all clean fclean re
