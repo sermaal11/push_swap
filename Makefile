@@ -50,9 +50,9 @@ $(NAME): $(addprefix $(OBJDIR)/, $(OBJS))
 
 # La regla %.o compila los archivos objeto
 $(OBJDIR)/%.o : %.c | $(OBJDIR)
-	@echo "$(CYAN)Compilando...$(RESET)"
+	@echo "$(CYAN)Creando objetos...$(RESET)"
 	$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(GREEN)Objetos compilados con exito!$(RESET)"
+	@echo "$(GREEN)Objetos creados con exito!$(RESET)"
 
 # La regla $(OBJDIR) crea el directorio de los archivos objeto
 $(OBJDIR):

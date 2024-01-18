@@ -6,11 +6,11 @@
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 17:11:36 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/18 17:12:23 by sergio           ###   ########.fr       */
+/*   Updated: 2024/01/18 20:41:04 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 int	ft_strlen(const char *str)
 {
