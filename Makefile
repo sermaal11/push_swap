@@ -1,4 +1,7 @@
-#------------------------------------------------------------------------------#
+
+#******************************************************************************#
+#********************************* C MAKEFILE *********************************#
+#******************************************************************************#
 
 # Nombre del ejecutable a crear (sin espacios)
 NAME = push_swap
@@ -6,52 +9,71 @@ NAME = push_swap
 CC = gcc
 # Flags de compilacion (agregar los que se necesiten)
 CFLAGS = -Wall -Wextra -Werror
+# Directorio de los archivos objeto (no tocar)
+OBJDIR = obj
+# Archivos fuente (agregar los que se necesiten)
+SRCS =	main.c \
+		ft_check_input.c \
+		ft_lst.c \
+		ft_atoi.c \
+		ft_split.c \
+		ft_substr.c \
+		ft_error.c \
+		ft_strlen.c
 
 #------------------------------------------------------------------------------#
 
-# Archivos fuente (agregar los que se necesiten)
-SRCS = main.c
 # Archivos objeto (no tocar)
 OBJS = $(SRCS:.c=.o)
 
 #------------------------------------------------------------------------------#
 
-# Colores para el make (opcional)
+# Colores para el make
 RESET = \033[0m
 GREEN = \033[92m
-MAGENTA = \033[95m
+CYAN = \033[96m
+RED = \033[91m
+BACKGROUND_GREEN = \033[42m
 
 #------------------------------------------------------------------------------#
 
 # Reglas del make (no tocar)
 
 # $@ -> nombre del objetivo (en este caso, el nombre del ejecutable)
-# $^ -> todas las dependencias
-# $< -> la primera dependencia
-
-# $@ -> nombre del objetivo (en este caso, el nombre del ejecutable)
 all: $(NAME)
-	@echo "$(GREEN)$(NAME) compilado exitosamente!!$(RESET)"
+	@echo "$(BACKGROUND_GREEN)El Programa $(NAME) ha sido compilado!$(RESET)"
 
 # La regla $(NAME) compila el ejecutable con los archivos objeto creados 
-$(NAME): $(OBJS)
+$(NAME): $(addprefix $(OBJDIR)/, $(OBJS))
+	@echo "$(CYAN)Compilando $(NAME)...$(RESET)"
 	$(CC) $(CFLAGS) -o $@ $^
 
 # La regla %.o compila los archivos objeto
-%.o : %.c
+$(OBJDIR)/%.o : %.c | $(OBJDIR)
+	@echo "$(CYAN)Compilando...$(RESET)"
 	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(GREEN)Objetos compilados con exito!$(RESET)"
 
-# La regla clean elimina todos los archivos objeto
+# La regla $(OBJDIR) crea el directorio de los archivos objeto
+$(OBJDIR):
+	@echo "$(CYAN)Creando directorio de objetos...$(RESET)"
+	mkdir $(OBJDIR)
+	@echo "$(GREEN)Directorio de objetos creado con éxito!$(RESET)"
+
+# La regla clean elimina todos los archivos objeto y el directorio
 clean:
-	@echo "$(MAGENTA)Eliminando archivos objeto ...$(RESET)"
-	rm -rf $(OBJS)
-	@echo "$(GREEN)Todos los archivos objeto han sido eliminados$(RESET)"
+	@echo "$(RED)Eliminando archivos objeto...$(RESET)"
+	rm -rf $(addprefix $(OBJDIR)/, $(OBJS))
+	@echo "$(GREEN)Todos los archivos objeto han sido eliminados!$(RESET)"
+	@echo "$(RED)Eliminando directorio de objetos...$(RESET)"
+	rm -rf $(OBJDIR)
+	@echo "$(GREEN)Directorio de objetos eliminado!$(RESET)"
 
 # La regla fclean elimina todos los archivos objeto y el ejecutable
 fclean: clean
-	@echo "$(MAGENTA)Eliminando ejecutable ...$(RESET)"
+	@echo "$(RED)Eliminando ejecutable ...$(RESET)"
 	rm -rf $(NAME)
-	@echo "$(GREEN)El ejecutable ha sido eliminado$(RESET)"
+	@echo "$(GREEN)El ejecutable ha sido eliminado!$(RESET)"
 
 # La regla re elimina todo y compila nuevamente
 re: fclean all

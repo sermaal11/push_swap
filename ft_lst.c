@@ -1,22 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lst.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/18 14:55:18 by sergio           ###   ########.fr       */
+/*   Created: 2024/01/18 15:51:20 by sergio            #+#    #+#             */
+/*   Updated: 2024/01/18 17:14:33 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstnew(int content)
 {
-	if (argc > 1)
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*current;
+
+	current = *lst;
+	if (*lst == NULL)
 	{
-		ft_check_input(argc, argv);
+		*lst = new;
+		return ;
 	}
-	return (0);
+	else
+	{
+		while (current->next != NULL)
+			current = current->next;
+	}
+	current->next = new;
 }

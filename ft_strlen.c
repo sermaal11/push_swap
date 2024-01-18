@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 18:09:59 by smarin-a          #+#    #+#             */
-/*   Updated: 2023/10/20 12:48:30 by smarin-a         ###   ########.fr       */
+/*   Created: 2024/01/18 17:11:36 by sergio            #+#    #+#             */
+/*   Updated: 2024/01/18 17:12:23 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+# include "push_swap.h"
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
-	while (*s != '\0')
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	while (str[i] != '\0')
+		i++;
 	return (i);
 }

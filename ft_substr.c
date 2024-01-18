@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/18 14:55:18 by sergio           ###   ########.fr       */
+/*   Created: 2024/01/18 16:21:54 by sergio            #+#    #+#             */
+/*   Updated: 2024/01/18 16:22:19 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	if (argc > 1)
+	size_t	i;
+	size_t	s_len;
+	char	*sub_s;	
+
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		len = 0;
+	else if (start + len > s_len)
+		len = s_len - start;
+	sub_s = (char *)malloc((len + 1) * sizeof(char));
+	if (sub_s == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		ft_check_input(argc, argv);
+		sub_s[i] = s[start + i];
+		i++;
 	}
-	return (0);
+	sub_s[i] = '\0';
+	return (sub_s);
 }

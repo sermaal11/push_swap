@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 12:17:36 by smarin-a          #+#    #+#             */
-/*   Updated: 2023/10/19 18:34:47 by smarin-a         ###   ########.fr       */
+/*   Created: 2024/01/18 17:06:02 by sergio            #+#    #+#             */
+/*   Updated: 2024/01/18 17:29:50 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include "push_swap.h"
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+void	ft_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(1);
 }
