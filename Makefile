@@ -8,7 +8,7 @@ NAME = push_swap
 # Compilador a utilizar (gcc, clang, etc)
 CC = gcc
 # Flags de compilacion (agregar los que se necesiten)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 # Directorio de los archivos objeto (no tocar)
 OBJDIR = obj
 # Archivos fuente (agregar los que se necesiten)
@@ -19,7 +19,8 @@ SRCS =	main.c \
 		ft_split.c \
 		ft_substr.c \
 		ft_error.c \
-		ft_strlen.c
+		ft_strlen.c \
+		ft_isdigit.c
 
 #------------------------------------------------------------------------------#
 
@@ -45,21 +46,20 @@ all: $(NAME)
 
 # La regla $(NAME) compila el ejecutable con los archivos objeto creados 
 $(NAME): $(addprefix $(OBJDIR)/, $(OBJS))
+	@echo "$(GREEN)Objetos creados con exito!$(RESET)"
 	@echo "$(CYAN)Compilando $(NAME)...$(RESET)"
 	$(CC) $(CFLAGS) -o $@ $^
 
 # La regla %.o compila los archivos objeto
 $(OBJDIR)/%.o : %.c | $(OBJDIR)
-	@echo "$(CYAN)Creando objetos...$(RESET)"
 	$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(GREEN)Objetos creados con exito!$(RESET)"
 
 # La regla $(OBJDIR) crea el directorio de los archivos objeto
 $(OBJDIR):
 	@echo "$(CYAN)Creando directorio de objetos...$(RESET)"
 	mkdir $(OBJDIR)
 	@echo "$(GREEN)Directorio de objetos creado con éxito!$(RESET)"
-
+	@echo "$(CYAN)Creando objetos...$(RESET)"
 # La regla clean elimina todos los archivos objeto y el directorio
 clean:
 	@echo "$(RED)Eliminando archivos objeto...$(RESET)"

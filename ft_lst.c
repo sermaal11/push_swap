@@ -6,7 +6,7 @@
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 15:51:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/18 17:14:33 by sergio           ###   ########.fr       */
+/*   Updated: 2024/01/19 15:53:43 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,20 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	current = *lst;
 	if (*lst == NULL)
-	{
 		*lst = new;
-		return ;
-	}
 	else
 	{
 		while (current->next != NULL)
 			current = current->next;
+		(*lst)->next = new;
 	}
-	current->next = new;
+}
+
+void ft_add_number_to_node(int num, t_list **stack_a)
+{
+	t_list	*new_node;
+
+	new_node = ft_lstnew(num);
+	printf("%d\n", new_node->content);
+	ft_lstadd_back(stack_a, new_node);
 }

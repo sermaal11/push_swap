@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/19 15:50:31 by sergio           ###   ########.fr       */
+/*   Created: 2024/01/19 14:08:14 by sergio            #+#    #+#             */
+/*   Updated: 2024/01/19 14:10:09 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_isdigit(int c)
 {
-	t_list	*stack_a;
-	//t_list	stack_b;
-	
-	stack_a = NULL;
-	if (argc > 1)
-	{
-		ft_check_input(argc, argv, &stack_a);
-		//printf("%d", stack_a.content);
-	}
-	return (0);
+	return (c >= '0' && c <= '9');
 }
