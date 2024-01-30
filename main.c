@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/19 15:50:31 by sergio           ###   ########.fr       */
+/*   Updated: 2024/01/30 14:35:38 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int	main(int argc, char **argv)
 	//t_list	stack_b;
 	
 	stack_a = NULL;
-	if (argc > 1)
+	if (argc > 1 && argv[1])
 	{
 		ft_check_input(argc, argv, &stack_a);
-		//printf("%d", stack_a.content);
+		printf("%d", stack_a->content);
 	}
+	system("leaks -q push_swap");
 	return (0);
 }

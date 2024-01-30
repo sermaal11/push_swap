@@ -8,7 +8,7 @@ NAME = push_swap
 # Compilador a utilizar (gcc, clang, etc)
 CC = gcc
 # Flags de compilacion (agregar los que se necesiten)
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 # Directorio de los archivos objeto (no tocar)
 OBJDIR = obj
 # Archivos fuente (agregar los que se necesiten)
@@ -73,10 +73,17 @@ clean:
 fclean: clean
 	@echo "$(RED)Eliminando ejecutable ...$(RESET)"
 	rm -rf $(NAME)
+	@rm -rf test/$(NAME)
 	@echo "$(GREEN)El ejecutable ha sido eliminado!$(RESET)"
 
 # La regla re elimina todo y compila nuevamente
 re: fclean all
+
+test: all
+	@echo "$(CYAN)Copiando $(NAME) a la carpeta de prueba...$(RESET)"
+	cp $(NAME) test/
+	@echo "$(CYAN)Ejecutando el comando push_swap_test.sh...$(RESET)"
+	cd test; ./push_swap_test.sh
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
 .PHONY: all clean fclean re
