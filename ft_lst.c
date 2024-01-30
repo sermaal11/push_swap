@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 15:51:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 14:35:12 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:03:55 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-void ft_add_number_to_node(int num, t_list **stack_a)
+void	ft_add_number_to_node(int num, t_list **stack_a)
 {
 	t_list	*new_node;
 
 	new_node = ft_lstnew(num);
-	//printf("%d\n", new_node->content);
+	//printf("%d\n", new_node->content); Imprime contenido guardado en eel nodo
 	ft_lstadd_back(stack_a, new_node);
 }

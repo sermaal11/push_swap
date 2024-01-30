@@ -6,13 +6,13 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:38:40 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 14:34:44 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:02:49 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// 5  "0 0" Output actual -> 0 0 Numeros repetiddos
+// 5  "0 0" Output actual -> 0 0 Numeros repetidos
 // 6  "-01 -001" Output actual -> -1 -1 Numeros repetidos
 // 8  "-3 -2 -2" Output actual -> -3 -2 -2 Numeros repetidos
 // 13  "8 008 12" Output actual -> 8 8 12 Numeros repetidos
@@ -29,9 +29,9 @@
 // 40  "1 01" Output actual -> 1 1 Numeros repetidos
 // 42  "-00042 -000042" Output actual -> -42 -42 Numeros repetidos
 
-static void ft_check_string(char *str)
+static void	ft_check_string(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')

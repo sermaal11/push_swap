@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 14:35:38 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:04:51 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	//t_list	stack_b;
-	
+
 	stack_a = NULL;
-	if (argc > 1 && argv[1])
+	if (argc > 1)
 	{
 		ft_check_input(argc, argv, &stack_a);
-		printf("%d", stack_a->content);
 	}
+	else
+		ft_error();
 	system("leaks -q push_swap");
 	return (0);
 }

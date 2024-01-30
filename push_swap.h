@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/19 15:49:13 by sergio           ###   ########.fr       */
+/*   Updated: 2024/01/30 15:04:34 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 {
 	int		content;
 	t_list	*next;
-}t_list;
+}	t_list;
 
 void	ft_check_input(int argc, char **argv, t_list **stack_a);
 t_list	*ft_lstnew(int content);
