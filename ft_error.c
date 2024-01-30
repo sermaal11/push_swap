@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 17:06:02 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 10:38:32 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:05:34 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
+	//system("leaks -q push_swap");
 	exit(1);
 }
