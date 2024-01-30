@@ -85,6 +85,10 @@ test: all
 	@echo "$(CYAN)Ejecutando el comando push_swap_test.sh...$(RESET)"
 	cd test; ./push_swap_test.sh
 
+valgrind: all
+	@echo "$(CYAN)Ejecutando Valgrind en $(NAME)...$(RESET)"
+	valgrind --leak-check=full ./$(NAME) -9 5 -3 12 -7
+
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
 .PHONY: all clean fclean re
 

@@ -6,27 +6,22 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 15:51:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 18:29:38 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:38:12 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_check_duplicates(int content, t_list **stack_a)
+void	ft_stack_clear(t_list **stack)
 {
-	t_list	*current;
-	
-	current = *stack_a;
-	while (current != NULL)
-	{
-		if (current->content == content)
-			return (1);
-		current = current->next;
-	}
-	return (0);
+	if (!stack || !(*stack))
+		return ;
+	ft_stack_clear(&(*stack)->next);
+	free(*stack);
+	*stack = NULL;
 }
 
-t_list	*ft_lstnew(int content)
+static t_list	*ft_lstnew(int content)
 {
 	t_list	*new_node;
 
@@ -38,7 +33,7 @@ t_list	*ft_lstnew(int content)
 	return (new_node);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+static void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
 
@@ -48,9 +43,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		while (current->next != NULL)
-		{
 			current = current->next;
-		}
 		current->next = new;
 	}
 }
@@ -58,8 +51,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 void	ft_add_number_to_node(int num, t_list **stack_a)
 {
 	t_list	*new_node;
-	int	duplicate;
-	
+	int		duplicate;
+
 	duplicate = ft_check_duplicates(num, stack_a);
 	if (duplicate == 1)
 		ft_error();

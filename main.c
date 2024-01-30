@@ -6,13 +6,13 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 17:15:36 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:45:11 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+static int	ft_lstsize(t_list *lst)
 {
 	t_list	*current;
 	int		count;
@@ -21,7 +21,7 @@ int	ft_lstsize(t_list *lst)
 	count = 0;
 	while (current != NULL)
 	{
-		printf("lst_size %p - %d\n", &current->content, current->content);
+		printf("nodo %d -> Memdir %p -> Value %d\n", count, &current->content, current->content);
 		current = current->next;
 		count++;
 	}
@@ -40,6 +40,10 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_error();
+	ft_stack_clear(&stack_a);
+	//ft_stack_clear(&stack_b);
+	
+	// Funciones de control
 	ft_lstsize(stack_a);
 	system("leaks -q push_swap");
 	return (0);
