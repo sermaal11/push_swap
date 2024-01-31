@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:38:40 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 15:01:03 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:48:16 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,22 @@ int	ft_check_ordered_yet(t_list **stack_a)
 	}
 	ft_stack_clear(stack_a);
 	return (0);
+}
+
+t_list ft_check_lowest_number(t_list *stack_a)
+{
+	t_list	*current;
+	t_list	lowest_number;
+	
+	current = stack_a;
+	lowest_number = *stack_a;
+	while (current != NULL)
+	{
+		if (current->content < lowest_number.content)
+			lowest_number = *current;
+		current = current->next;
+	}
+	return (lowest_number);
 }
 
 void	ft_check_input(int argc, char **argv, t_list **stack_a)

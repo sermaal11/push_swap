@@ -6,26 +6,26 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 15:51:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 17:27:51 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:45:36 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	ft_lstsize(t_list *lst)
-// {
-// 	t_list	*current;
-// 	int		count;
+int	ft_lstsize(t_list *lst)
+{
+	t_list	*current;
+	int		count;
 
-// 	current = lst;
-// 	count = 0;
-// 	while (current != NULL)
-// 	{
-// 		current = current->next;
-// 		count++;
-// 	}
-// 	return (count);
-// }
+	current = lst;
+	count = 0;
+	while (current != NULL)
+	{
+		current = current->next;
+		count++;
+	}
+	return (count);
+}
 
 void	ft_stack_clear(t_list **stack)
 {

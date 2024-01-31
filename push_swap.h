@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 18:17:40 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:45:57 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 int		ft_strlen(const char *str);
 int		ft_isdigit(int c);
 long	ft_atol(const char *str);
-//int		ft_lstsize(t_list *lst);
-void	ft_check_input(int argc, char **argv, t_list **stack_a);
+int		ft_lstsize(t_list *lst);
 void	ft_add_number_to_node(int num, t_list **stack_a);
+void	ft_check_input(int argc, char **argv, t_list **stack_a);
 int		ft_check_duplicates(int content, t_list **stack_a);
-void	ft_stack_clear(t_list **stack);
 int		ft_check_ordered_yet(t_list **stack_a);
+t_list	ft_check_lowest_number(t_list *stack_a);
 void	ft_swap(t_list **stack);
 void	ft_push(t_list **source, t_list **destination);
 void	ft_rotate_up(t_list **stack);
 void	ft_rotate_down(t_list **stack);
+t_list	ft_harcoded(t_list **stack_a, t_list **stack_b, int lst_size);
 void	ft_error(void);
+void	ft_stack_clear(t_list **stack);
 
 #endif
