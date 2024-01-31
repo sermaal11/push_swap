@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 19:45:11 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 11:19:03 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,18 @@ static int	ft_lstsize(t_list *lst)
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
-	//t_list	stack_b;
+	t_list	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc > 1)
 	{
 		ft_check_input(argc, argv, &stack_a);
 	}
-	else
-		ft_error();
-	ft_stack_clear(&stack_a);
-	//ft_stack_clear(&stack_b);
 	
 	// Funciones de control
 	ft_lstsize(stack_a);
-	system("leaks -q push_swap");
+	ft_stack_clear(&stack_a);
+	ft_stack_clear(&stack_b);
 	return (0);
 }

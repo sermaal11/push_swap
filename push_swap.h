@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 19:39:29 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 11:37:07 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ typedef struct s_list
 	t_list	*next;
 }	t_list;
 
-void	ft_check_input(int argc, char **argv, t_list **stack_a);
-long	ft_atoi(const char *str);
-char	**ft_split(const char *s, char c);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
-void	ft_error(void);
-int		ft_strlen(const char *str);
-int		ft_isdigit(int c);
-void	ft_add_number_to_node(int num, t_list **stack_a);
-int		ft_check_duplicates(int content, t_list **stack_a);
-void	ft_stack_clear(t_list **stack);
+void		ft_check_input(int argc, char **argv, t_list **stack_a);
+long		ft_atol(const char *str);
+char		**ft_split(const char *s, char c);
+char		*ft_substr(const char *s, unsigned int start, size_t len);
+void		ft_error(void);
+int			ft_strlen(const char *str);
+int			ft_isdigit(int c);
+void		ft_add_number_to_node(int num, t_list **stack_a);
+int			ft_check_duplicates(int content, t_list **stack_a);
+void		ft_stack_clear(t_list **stack);
 
 #endif

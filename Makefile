@@ -34,7 +34,7 @@ RESET = \033[0m
 GREEN = \033[92m
 CYAN = \033[96m
 RED = \033[91m
-BACKGROUND_GREEN = \033[42m
+BOLD_GREEN = \033[1;32m
 
 #------------------------------------------------------------------------------#
 
@@ -42,11 +42,11 @@ BACKGROUND_GREEN = \033[42m
 
 # $@ -> nombre del objetivo (en este caso, el nombre del ejecutable)
 all: $(NAME)
-	@echo "$(BACKGROUND_GREEN)El Programa $(NAME) ha sido compilado!$(RESET)"
+	@echo "$(BOLD_GREEN)(⌐■_■) ¡¡¡$(NAME) compilado con exito!!! (⌐■_■)$(RESET)"
 
 # La regla $(NAME) compila el ejecutable con los archivos objeto creados 
 $(NAME): $(addprefix $(OBJDIR)/, $(OBJS))
-	@echo "$(GREEN)Objetos creados con exito!$(RESET)"
+	@echo "$(GREEN)Objetos creados!$(RESET)"
 	@echo "$(CYAN)Compilando $(NAME)...$(RESET)"
 	$(CC) $(CFLAGS) -o $@ $^
 
@@ -58,7 +58,7 @@ $(OBJDIR)/%.o : %.c | $(OBJDIR)
 $(OBJDIR):
 	@echo "$(CYAN)Creando directorio de objetos...$(RESET)"
 	mkdir $(OBJDIR)
-	@echo "$(GREEN)Directorio de objetos creado con éxito!$(RESET)"
+	@echo "$(GREEN)Directorio de objetos creado!$(RESET)"
 	@echo "$(CYAN)Creando objetos...$(RESET)"
 # La regla clean elimina todos los archivos objeto y el directorio
 clean:
@@ -87,7 +87,7 @@ test: all
 
 valgrind: all
 	@echo "$(CYAN)Ejecutando Valgrind en $(NAME)...$(RESET)"
-	valgrind --leak-check=full ./$(NAME) -9 5 -3 12 -7
+	valgrind --leak-check=full ./$(NAME) 1 2 3 4 5
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
 .PHONY: all clean fclean re
