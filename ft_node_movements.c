@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_node_movements.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:19:47 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/01/31 18:24:40 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 23:20:54 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Esta funcion me realiza las operaciones de sa y sb
+// Esta funcion realiza las operaciones de sa y sb
 // Falta ss, que hace sa y sb a la vez
 
 void	ft_swap(t_list **stack)
@@ -28,7 +28,7 @@ void	ft_swap(t_list **stack)
 	return ;
 }
 
-// Esta funcion me realiza las operaciones de pa y pb
+// Esta funcion realiza las operaciones de pa y pb
 
 void	ft_push(t_list **source, t_list **destination)
 {
@@ -43,7 +43,7 @@ void	ft_push(t_list **source, t_list **destination)
 	}
 }
 
-// Esta funcion me realiza las operaciones de ra y rb
+// Esta funcion realiza las operaciones de ra y rb
 // Falta rr, que hace ra y rb a la vez
 
 void	ft_rotate_up(t_list **stack)
@@ -63,7 +63,7 @@ void	ft_rotate_up(t_list **stack)
 	}
 }
 
-// Esta funcion me realiza las operaciones de rra y rrb
+// Esta funcion realiza las operaciones de rra y rrb
 // Falta rrr, que hace rra y rrb a la vez
 
 void	ft_rotate_down(t_list **stack)

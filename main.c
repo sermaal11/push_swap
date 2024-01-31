@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 20:35:38 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 00:30:55 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,27 @@ static void	ft_print_stack(t_list *lst, char c)
 // ft_rotate_down(&stack_a);
 // ft_print_stack(stack_a, 'a');
 
+// ! Tengo problemas con los siguientes inputs:
+// ! 1.	./push_swap 2 1 30 20 15
+// ! OUTPUT: 2, 1, 20, 30 -> Pierdo 1 nodo
+// ! 2.	./push_swap 23 45 34 12 42
+// ! OUTPUT: 23, 42, 34 -> Pierdo 2 nodos
+// ! Pero este input me lo ordena bien
+// ! ./push_swap 2 1 3 6 5
+// ! OUTPUT: 1, 2, 3, 5, 6
+
+/*
+En main se hace lo siguiente:
+1.	Se crea una lista stack_a vacia.
+2.	Se crea una lista stack_b vacia.
+3.	Se comprueba que el numero de argumentos sea mayor que 1.
+4.	Se comprueba que los argumentos sean numeros validos mediante ft_check_input
+	y se añaden a la lista stack_a.
+5.	Se comprueba si la lista esta ordenada mediante ft_check_ordered_yet.
+6.	Se comprueba si el tamaño de la lista es menor o igual a 5. Si es asi, se
+	ordena mediante ft_hardcoded.
+*/
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -69,7 +90,7 @@ int	main(int argc, char **argv)
 			return (0);
 		ft_print_stack(stack_a, 'a');
 		if (ft_lstsize(stack_a) <= 5)
-			ft_harcoded(&stack_a, &stack_b, ft_lstsize(stack_a));
+			ft_hardcoded(&stack_a, &stack_b, ft_lstsize(stack_a));
 		ft_print_stack(stack_a, 'a');
 	}
 	ft_stack_clear(&stack_a);

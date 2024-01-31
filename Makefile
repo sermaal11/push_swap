@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+         #
+#    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/01/31 20:09:21 by smarin-a         ###   ########.fr        #
+#    Updated: 2024/01/31 23:22:11 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,15 +94,17 @@ fclean: clean
 # La regla re elimina todo y compila nuevamente
 re: fclean all
 
+# La regla test ejecuta el script de prueba
 test: all
 	@echo "$(CYAN)Copiando $(NAME) a la carpeta de prueba...$(RESET)"
 	cp $(NAME) test/
 	@echo "$(CYAN)Ejecutando el comando push_swap_test.sh...$(RESET)"
 	cd test; ./push_swap_test.sh
 
+# La regla valgrind ejecuta valgrind en el ejecutable
 valgrind: all
 	@echo "$(CYAN)Ejecutando Valgrind en $(NAME)...$(RESET)"
-	valgrind --leak-check=full ./$(NAME) 2 3 1
+	valgrind --leak-check=full ./$(NAME) 2 1 3 6 5
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
 .PHONY: all clean fclean re
