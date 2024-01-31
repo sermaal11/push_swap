@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:16:29 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 11:37:04 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:41:27 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	ft_isspace(int c)
 long	ft_atol(const char *str)
 {
 	long	result;
-	int			sign;
-	int			i;
+	int		sign;
+	int		i;
 
 	result = 0;
 	sign = 1;

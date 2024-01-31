@@ -6,7 +6,7 @@
 #    By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/01/31 12:36:31 by smarin-a         ###   ########.fr        #
+#    Updated: 2024/01/31 17:17:25 by smarin-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,13 @@ OBJDIR = objects
 SRCS =	main.c \
 		ft_check_input.c \
 		ft_lst.c \
-		ft_atoi.c \
+		ft_atol.c \
 		ft_split.c \
 		ft_substr.c \
 		ft_error.c \
 		ft_strlen.c \
-		ft_isdigit.c
+		ft_isdigit.c \
+		ft_node_movements.c
 
 #------------------------------------------------------------------------------#
 

@@ -6,27 +6,54 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 14:27:29 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:27:47 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_lstsize(t_list *lst)
+static void	ft_print_stack(t_list *lst, char c)
 {
 	t_list	*current;
 	int		count;
 
 	current = lst;
 	count = 0;
+	printf("stack %c\n\n", c);
 	while (current != NULL)
 	{
-		printf("nodo %d -> Memdir %p -> Value %d\n", count, &current->content, current->content);
+		printf("nodo %d -> Memdir %p -> Value %d\n",
+			count, &current->content, current->content);
 		current = current->next;
 		count++;
 	}
-	return (count);
+	printf("\n");
 }
+
+// Prueba de swap
+// ft_print_stack(stack_a, 'a');
+// ft_swap(&stack_a);
+// ft_print_stack(stack_a, 'a');
+
+// Prueba de push
+// ft_print_stack(stack_a, 'a');
+// ft_print_stack(stack_b, 'b');
+// ft_push(&stack_a, &stack_b);
+// ft_print_stack(stack_a, 'a');
+// ft_print_stack(stack_b, 'b');
+// ft_push(&stack_b, &stack_a);
+// ft_print_stack(stack_a, 'a');
+// ft_print_stack(stack_b, 'b');
+
+// Prueba de rotate_up
+// ft_print_stack(stack_a, 'a');
+// ft_rotate_up(&stack_a);
+// ft_print_stack(stack_a, 'a');
+
+// Prueba de rotate_down
+// ft_print_stack(stack_a, 'a');
+// ft_rotate_down(&stack_a);
+// ft_print_stack(stack_a, 'a');
 
 int	main(int argc, char **argv)
 {
@@ -39,11 +66,10 @@ int	main(int argc, char **argv)
 	{
 		ft_check_input(argc, argv, &stack_a);
 		if (ft_check_ordered_yet(&stack_a) == 0)
-			return(0);	
+			return (0);
 	}
-	
-	// Funciones de control
-	ft_lstsize(stack_a);
+	ft_print_stack(stack_a, 'a');
+	ft_print_stack(stack_b, 'b');
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);
