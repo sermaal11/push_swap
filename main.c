@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 11:19:03 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:27:29 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		ft_check_input(argc, argv, &stack_a);
+		if (ft_check_ordered_yet(&stack_a) == 0)
+			return(0);	
 	}
 	
 	// Funciones de control

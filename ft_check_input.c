@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:38:40 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/30 19:19:07 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:27:02 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,22 @@ int	ft_check_duplicates(int content, t_list **stack_a)
 	return (0);
 }
 
+int	ft_check_ordered_yet(t_list **stack_a)
+{
+	t_list	*temp;
+
+	temp = *stack_a;
+	while (temp->next != NULL)
+	{
+		if (temp->content > temp->next->content)
+			return (1);
+		temp = temp->next;
+	}
+	ft_stack_clear(stack_a);
+	return (0);
+}
+
+
 void	ft_check_input(int argc, char **argv, t_list **stack_a)
 {
 	int		i;
@@ -59,11 +75,11 @@ void	ft_check_input(int argc, char **argv, t_list **stack_a)
 		while (matrix[iy] != NULL)
 		{
 			ft_check_string(matrix[iy]);
-			if (ft_atoi(matrix[iy]) == 0 && matrix[iy][0] != '0')
+			if (ft_atol(matrix[iy]) == 0 && matrix[iy][0] != '0')
 				ft_error();
-			if (ft_atoi(matrix[iy]) > INT_MAX || ft_atoi(matrix[iy]) < INT_MIN)
+			if (ft_atol(matrix[iy]) > INT_MAX || ft_atol(matrix[iy]) < INT_MIN)
 				ft_error();
-			ft_add_number_to_node(ft_atoi(matrix[iy]), stack_a);
+			ft_add_number_to_node(ft_atol(matrix[iy]), stack_a);
 			free(matrix[iy]);
 			iy++;
 		}
