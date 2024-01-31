@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:02:39 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/01/31 20:52:22 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:54:40 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,27 @@ static t_list	ft_harcoded_size_three(t_list *stack_a, t_list *stack_b)
 	// Una vez el numero mas bajo esta en el stack_b
 	// Llamar a ft_harcoded_size_two
 	// LLamar a ft_push(&stack_b, &stack_a);
+	
+			// 	t_list	lowest_node;
+			
+			// 	lowest_node = find_lowest_number(*stack_a);
+			
+			// 	if (lowest_node.content == (*stack_a)->content)
+			// 		ft_push(stack_a, stack_b);
+			// 	else if (lowest_node.content == (*stack_a)->next->content)
+			// 	{
+			// 		ft_swap(stack_a);
+			// 		ft_push(stack_a, stack_b);
+			// 	}
+			// 	else if (lowest_node.content == (*stack_a)->next->next->content)
+			// 	{
+			// 		ft_rotate_down(stack_a);
+			// 		ft_push(stack_a, stack_b);
+			// 	}
+			
+			//  Una vez que el número más bajo está en stack_b
+			// 	ft_harcoded_size_two(stack_a);
+			// 	ft_push(stack_b, stack_a);
 	return (*stack_a);
 }
 
