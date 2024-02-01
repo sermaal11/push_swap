@@ -6,7 +6,7 @@
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 15:51:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 00:14:47 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/01 23:35:57 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,15 @@ void	ft_stack_clear(t_list **stack)
 	*stack = NULL;
 }
 
+/*
+En ft_lstnew se hace lo siguiente:
+1.	Declaramos un puntero a t_list llamado new_node.
+2.	Reservamos memoria para el nuevo nodo.
+3.	Comprobamos si la reserva de memoria ha sido correcta.
+4.	Si ha sido correcta, inicializamos el contenido del nuevo nodo con el
+	numero que le pasamos como argumento y el puntero next a NULL.
+5.	Devolvemos el nuevo nodo.
+*/
 static t_list	*ft_lstnew(int content)
 {
 	t_list	*new_node;
@@ -62,6 +71,16 @@ static t_list	*ft_lstnew(int content)
 	return (new_node);
 }
 
+/*
+En ft_lstadd_back se hace lo siguiente:
+1.	Declaramos un puntero a t_list llamado current y lo inicializamos al puntero
+	de la lista.
+2.	Comprobamos si la lista esta vacia. Si lo esta, igualamos el puntero de la
+	lista al nuevo nodo.
+3.	Si no esta vacia, recorremos la lista hasta llegar al ultimo nodo.
+4.	Una vez llegamos al ultimo nodo, igualamos el puntero next del ultimo nodo
+	al nuevo nodo.
+*/
 static void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 15:43:06 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/02 00:04:42 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,15 @@ void	ft_hardcoded(t_list **stack_a, t_list **stack_b, int lst_size);
 void	ft_error(void);
 // ft_stack_clear libera la memoria de la lista.
 void	ft_stack_clear(t_list **stack);
-
+// ft_swap_ss intercambia los dos primeros nodos de las dos listas.
 void	ft_swap_ss(t_list **stack_a, t_list **stack_b);
-
+// ft_rotate_up_rr mueve el primer nodo de las dos listas al final de las listas
 void	ft_rotate_up_rr(t_list **stack_a, t_list **stack_b);
-
+// ft_rotate_down_rrr mueve el ultimo nodo de las dos listas al principio.
 void	ft_rotate_down_rrr(t_list **stack_a, t_list **stack_b);
-
+// ft_radix ordena la lista mediante el algoritmo radix.
 void	ft_radix(t_list **stack);
+// ! ELIMINAR ESTA FUNCION
+void	ft_print_stack_info(t_list *lst, char c);
 
 #endif
