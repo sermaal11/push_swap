@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:38:40 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 23:59:29 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/01 11:03:56 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,17 +93,17 @@ En ft_check_lowest_number se hace lo siguiente:
 	mas bajo.
 5.	Se devuelve el numero mas bajo encontrado.
 */
-t_list	ft_check_lowest_number(t_list *stack_a)
+int	ft_check_lowest_number(t_list *stack_a)
 {
 	t_list	*current;
-	t_list	lowest_number;
+	int	lowest_number;
 
 	current = stack_a;
-	lowest_number = *stack_a;
+	lowest_number = INT_MAX;
 	while (current != NULL)
 	{
-		if (current->content < lowest_number.content)
-			lowest_number = *current;
+		if (current->content < lowest_number)
+			lowest_number = current->content;
 		current = current->next;
 	}
 	return (lowest_number);

@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_node_movements.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:19:47 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/01/31 23:20:54 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/01 12:20:12 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Esta funcion realiza las operaciones de sa y sb
-// Falta ss, que hace sa y sb a la vez
-
-void	ft_swap(t_list **stack)
+void	ft_swap(t_list **stack, char *str)
 {
 	int	temp;
 
@@ -25,12 +22,11 @@ void	ft_swap(t_list **stack)
 		(*stack)->content = (*stack)->next->content;
 		(*stack)->next->content = temp;
 	}
-	return ;
+	if (str != NULL)
+		write(1, str, 3);
 }
 
-// Esta funcion realiza las operaciones de pa y pb
-
-void	ft_push(t_list **source, t_list **destination)
+void	ft_push(t_list **source, t_list **destination, char *str)
 {
 	t_list	*temp;
 
@@ -41,12 +37,11 @@ void	ft_push(t_list **source, t_list **destination)
 		temp->next = *destination;
 		*destination = temp;
 	}
+	if (str != NULL)
+		write(1, str, 3);
 }
 
-// Esta funcion realiza las operaciones de ra y rb
-// Falta rr, que hace ra y rb a la vez
-
-void	ft_rotate_up(t_list **stack)
+void	ft_rotate_up(t_list **stack, char *str)
 {
 	t_list	*temp;
 	t_list	*last;
@@ -61,12 +56,11 @@ void	ft_rotate_up(t_list **stack)
 			last = last->next;
 		last->next = temp;
 	}
+	if (str != NULL)
+		write(1, str, 3);
 }
 
-// Esta funcion realiza las operaciones de rra y rrb
-// Falta rrr, que hace rra y rrb a la vez
-
-void	ft_rotate_down(t_list **stack)
+void	ft_rotate_down(t_list **stack, char *str)
 {
 	t_list	*last;
 	t_list	*second_last;
@@ -84,4 +78,6 @@ void	ft_rotate_down(t_list **stack)
 		*stack = last;
 		second_last->next = NULL;
 	}
+	if (str != NULL)
+		write(1, str, 4);
 }

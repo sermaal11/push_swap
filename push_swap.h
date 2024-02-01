@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 23:29:27 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/01 12:20:03 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,26 @@ int		ft_check_duplicates(int content, t_list **stack_a);
 // ft_check_ordered_yet comprueba si la lista esta ordenada.
 int		ft_check_ordered_yet(t_list **stack_a);
 // ft_check_lowest_number devuelve el nodo con el numero mas bajo.
-t_list	ft_check_lowest_number(t_list *stack_a);
+int	ft_check_lowest_number(t_list *stack_a);
 // ft_swap intercambia los dos primeros nodos de la lista.
-void	ft_swap(t_list **stack);
+void	ft_swap(t_list **stack, char *str);
 // ft_push mueve el primer nodo de la lista source a la lista destination.
-void	ft_push(t_list **source, t_list **destination);
+void	ft_push(t_list **source, t_list **destination, char *str);
 // ft_rotate_up mueve el primer nodo de la lista al final de la lista.
-void	ft_rotate_up(t_list **stack);
+void	ft_rotate_up(t_list **stack, char *str);
 // ft_rotate_down mueve el ultimo nodo de la lista al principio de la lista.
-void	ft_rotate_down(t_list **stack);
+void	ft_rotate_down(t_list **stack, char *str);
 // ft_hardcoded ordena la lista de 2 o 5 nodos.
-t_list	ft_hardcoded(t_list **stack_a, t_list **stack_b, int lst_size);
+void	ft_hardcoded(t_list **stack_a, t_list **stack_b, int lst_size);
 // ft_error imprime "Error" y sale del programa.
 void	ft_error(void);
 // ft_stack_clear libera la memoria de la lista.
 void	ft_stack_clear(t_list **stack);
+
+void	ft_swap_ss(t_list **stack_a, t_list **stack_b);
+
+void	ft_rotate_up_rr(t_list **stack_a, t_list **stack_b);
+
+void	ft_rotate_down_rrr(t_list **stack_a, t_list **stack_b);
 
 #endif

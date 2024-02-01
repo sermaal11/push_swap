@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
+#    By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/01/31 23:22:11 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/01 12:10:50 by smarin-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ CFLAGS = -Wall -Wextra -Werror -g3
 OBJDIR = objects
 # Archivos fuente (agregar los que se necesiten)
 SRCS =	main.c \
-		ft_check_input.c \
 		ft_lst.c \
 		ft_atol.c \
 		ft_split.c \
@@ -34,8 +33,10 @@ SRCS =	main.c \
 		ft_error.c \
 		ft_strlen.c \
 		ft_isdigit.c \
+		ft_check_input.c \
 		ft_node_movements.c \
-		ft_harcoded_sort.c
+		ft_node_movements_dup.c \
+		ft_harcoded_sort.c 
 
 #------------------------------------------------------------------------------#
 
