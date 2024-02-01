@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/01 15:56:48 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:44:48 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,15 @@ static void ft_index_nodes(t_list **stack)
 	temp = (*stack);
 	while (++i < lst_size)
 	{
-		aux = (*stack);
 		index = 0;
+		aux = (*stack);
 		while (aux)
 		{
 			if (temp->content > aux->content)
+			{
 				index++;
+				temp->index = index;
+			}
 			aux = aux->next;
 		}
 		temp = temp->next;
