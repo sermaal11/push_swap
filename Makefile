@@ -6,7 +6,7 @@
 #    By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/01 17:18:40 by smarin-a         ###   ########.fr        #
+#    Updated: 2024/02/01 21:23:56 by smarin-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,8 +108,14 @@ valgrind: all
 	@echo "$(CYAN)Ejecutando Valgrind en $(NAME)...$(RESET)"
 	valgrind --leak-check=full ./$(NAME) 2 1 3 6 5
 
-run: re
+run1: re
+	./push_swap 8 6 5 3 2 1
+	
+run2: re
 	./push_swap 2 1 3 6 5 8
+
+run3: re
+	./push_swap 6 8 1 2 5 3
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
 .PHONY: all clean fclean re

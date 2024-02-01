@@ -6,11 +6,19 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 19:02:39 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/01 16:48:17 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 20:30:54 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_jariskan(t_list **stack_a, t_list **stack_b)
+{
+	ft_rotate_down(stack_a, "rra\n");
+	ft_rotate_down(stack_a, "rra\n");
+	ft_rotate_down(stack_a, "rra\n");
+	ft_push(stack_a, stack_b, "pb\n");
+}
 
 static void	ft_hardcoded_size_three(t_list **stack_a)
 {
@@ -79,12 +87,7 @@ static void	ft_hardcoded_size_five(t_list **stack_a, t_list **stack_b)
 		ft_push(stack_a, stack_b, "pb\n");
 	}
 	else if (lowest_number == (*stack_a)->next->next->content)
-	{
-		ft_rotate_down(stack_a, "rra\n");
-		ft_rotate_down(stack_a, "rra\n");
-		ft_rotate_down(stack_a, "rra\n");
-		ft_push(stack_a, stack_b, "pb\n");
-	}
+		ft_jariskan(stack_a, stack_b);
 	else if (lowest_number == (*stack_a)->next->next->next->content)
 	{
 		ft_rotate_down(stack_a, "rra\n");

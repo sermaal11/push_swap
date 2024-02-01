@@ -6,11 +6,24 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 17:12:05 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:26:56 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void print_bits(int value)
+{
+    int i = 7;
+
+    while (i >= 0)
+    {
+        char bit = (value >> i & 1) + '0';
+        write(1, &bit, 1);
+        i--;
+    }
+	printf("\n");
+}
 
 static void	ft_print_stack(t_list *lst, char c)
 {
@@ -19,10 +32,13 @@ static void	ft_print_stack(t_list *lst, char c)
 
 	current = lst;
 	count = 0;
-	printf("\nstack %c\n\n", c);
+	
+	printf("stack %c\n", c);
 	while (current != NULL)
 	{
-		printf("nodo %d -> Content %d -> Index %d\n", count, current->content, current->index);
+		printf("nodo %d -> Content %d -> Index %d -> Index.bits ", count, current->content, current->index);
+		fflush(stdout);
+		print_bits(current->index);
 		current = current->next;
 		count++;
 	}
