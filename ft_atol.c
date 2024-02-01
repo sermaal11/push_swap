@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:16:29 by sergio            #+#    #+#             */
-/*   Updated: 2024/01/31 14:41:27 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:34:55 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ long	ft_atol(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-		if ((result * -1) < INT_MIN || result > INT_MAX)
+		if ((result * sign) < INT_MIN || (result * sign) > INT_MAX)
 			return ((long)INT_MAX + 1);
 		i++;
 	}

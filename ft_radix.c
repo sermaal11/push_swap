@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_node_movements_dup.c                            :+:      :+:    :+:   */
+/*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 12:09:54 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/01 15:14:16 by smarin-a         ###   ########.fr       */
+/*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
+/*   Updated: 2024/02/01 15:56:48 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap_ss(t_list **stack_a, t_list **stack_b)
+static void ft_index_nodes(t_list **stack)
 {
-	ft_swap(stack_a, NULL);
-	ft_swap(stack_b, NULL);
-	write(1, "ss\n", 3);
+	int		lst_size;
+	t_list	*aux;
+	t_list	*temp;
+	int		i;
+	int		index;
+
+	i = -1;
+	lst_size = ft_lstsize(*stack);
+	temp = (*stack);
+	while (++i < lst_size)
+	{
+		aux = (*stack);
+		index = 0;
+		while (aux)
+		{
+			if (temp->content > aux->content)
+				index++;
+			aux = aux->next;
+		}
+		temp = temp->next;
+	}
 }
 
-void	ft_rotate_up_rr(t_list **stack_a, t_list **stack_b)
+void	ft_radix(t_list **stack)
 {
-	ft_rotate_up(stack_a, NULL);
-	ft_rotate_up(stack_b, NULL);
-	write(1, "rr\n", 3);
-}
-
-void	ft_rotate_down_rrr(t_list **stack_a, t_list **stack_b)
-{
-	ft_rotate_down(stack_a, NULL);
-	ft_rotate_down(stack_b, NULL);
-	write(1, "rrr\n", 4);
+	ft_index_nodes(stack);
 }

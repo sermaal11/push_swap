@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 12:26:20 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:36:28 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 // 	printf("\n");
 // }
 
-
 /*
 En main se hace lo siguiente:
 1.	Se crea una lista stack_a vacia.
@@ -41,7 +40,6 @@ En main se hace lo siguiente:
 6.	Se comprueba si el tamaño de la lista es menor o igual a 5. Si es asi, se
 	ordena mediante ft_hardcoded.
 */
-
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -54,11 +52,15 @@ int	main(int argc, char **argv)
 		ft_check_input(argc, argv, &stack_a);
 		if (ft_check_ordered_yet(&stack_a) == 0)
 			return (0);
-		// ft_print_stack(stack_a, 'a');
+		//ft_print_stack(stack_a, 'a');
 		if (ft_lstsize(stack_a) <= 5)
 			ft_hardcoded(&stack_a, &stack_b, ft_lstsize(stack_a));
-		// ft_print_stack(stack_a, 'a');
+		if (ft_lstsize(stack_a) > 5)
+		{
+			ft_radix(&stack_a);
+		}
 	}
+	//ft_print_stack(stack_a, 'a');
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);

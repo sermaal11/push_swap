@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:38:40 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 11:03:56 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:13:51 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ En ft_check_lowest_number se hace lo siguiente:
 int	ft_check_lowest_number(t_list *stack_a)
 {
 	t_list	*current;
-	int	lowest_number;
+	int		lowest_number;
 
 	current = stack_a;
 	lowest_number = INT_MAX;

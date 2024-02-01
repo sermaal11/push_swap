@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 12:20:03 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:43:06 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list	t_list;
 typedef struct s_list
 {
 	int		content;
+	int		index;
 	t_list	*next;
 }	t_list;
 
@@ -47,7 +48,7 @@ int		ft_check_duplicates(int content, t_list **stack_a);
 // ft_check_ordered_yet comprueba si la lista esta ordenada.
 int		ft_check_ordered_yet(t_list **stack_a);
 // ft_check_lowest_number devuelve el nodo con el numero mas bajo.
-int	ft_check_lowest_number(t_list *stack_a);
+int		ft_check_lowest_number(t_list *stack_a);
 // ft_swap intercambia los dos primeros nodos de la lista.
 void	ft_swap(t_list **stack, char *str);
 // ft_push mueve el primer nodo de la lista source a la lista destination.
@@ -68,5 +69,7 @@ void	ft_swap_ss(t_list **stack_a, t_list **stack_b);
 void	ft_rotate_up_rr(t_list **stack_a, t_list **stack_b);
 
 void	ft_rotate_down_rrr(t_list **stack_a, t_list **stack_b);
+
+void	ft_radix(t_list **stack);
 
 #endif
