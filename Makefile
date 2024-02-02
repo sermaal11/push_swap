@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 01:21:36 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/02 01:23:37 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,8 +103,6 @@ git:
 		read -p "Mensaje para el commit: " message; \
 		git commit -m "$$message"; \
 		git push; \
-	else \
-		@echo "$(RED)Operacion abortada$(RESET)"; \
 	fi
 
 # La regla test ejecuta el script de prueba
