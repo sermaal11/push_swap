@@ -6,13 +6,11 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/02 10:31:22 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:40:24 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//hola dani que tal estas
 
 static void	ft_index_nodes(t_list **stack)
 {
