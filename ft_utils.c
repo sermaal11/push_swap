@@ -1,16 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:16:29 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 16:34:55 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/02 01:11:39 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+En ft_strlen se hace lo siguiente:
+1.	Se inicializa la variable i a 0.
+2.	Se recorre la cadena str y se incrementa i hasta que el caracter sea igual 
+	a '\0'.
+3.	Se retorna i.
+*/
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+/*
+En ft_isdigit se hace lo siguiente:
+1.	Se comprueba si el char c es un digito.
+2. 	Se devuelve 1 si es un digito, 0 si no lo es.
+*/
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+/*
+En ft_error se hace lo siguiente:
+1.	Se escribe "Error" en la salida de error estandar.
+2.	Se sale del programa.
+*/
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 static int	ft_isspace(int c)
 {

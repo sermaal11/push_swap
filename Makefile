@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 00:26:04 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/02 01:13:18 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,10 @@ OBJDIR = objects
 # Archivos fuente (agregar los que se necesiten)
 SRCS =	main.c \
 		ft_lst.c \
-		ft_atol.c \
+		ft_utils.c \
 		ft_split.c \
-		ft_error.c \
-		ft_radix.c \
 		ft_substr.c \
-		ft_strlen.c \
-		ft_isdigit.c \
+		ft_radix_sort.c \
 		ft_check_input.c \
 		ft_harcoded_sort.c \
 		ft_node_movements.c \
@@ -52,6 +49,7 @@ GREEN = \033[92m
 CYAN = \033[96m
 RED = \033[91m
 BOLD_GREEN = \033[1;32m
+BOLD_RED = \033[1;31m
 
 #------------------------------------------------------------------------------#
 
@@ -97,14 +95,16 @@ fclean: clean
 re: fclean all
 
 # La regla git agrega, hace commit y hace push
-save:
+git:
 	git add .
 	git status
-	read -p "Do you want to continue? [y/n]: " answer; \
-	if [ $$answer = "y" ]; then \
-		read -p "Enter commit message: " message; \
+	@read -p "Quieres continuar? [$(BOLD_GREEN)y$(RESET)/$(BOLD_RED)n$(RESET)]: " answer; \
+	if [ "$$answer" = "y" ]; then \
+		read -p "Mensaje para el commit: " message; \
 		git commit -m "$$message"; \
 		git push; \
+	else \
+		@echo "$(RED)Operacion abortada$(RESET)"; \
 	fi
 
 # La regla test ejecuta el script de prueba
@@ -117,19 +117,13 @@ test: re
 # La regla valgrind ejecuta valgrind en el ejecutable
 valgrind: all
 	@echo "$(CYAN)Ejecutando Valgrind en $(NAME)...$(RESET)"
-	valgrind --leak-check=full ./$(NAME) 2 1 3 6 5
+	valgrind --leak-check=full ./$(NAME) 2 1 3 6 5 8
 
-# La regla run1 ejecuta el ejecutable con el primer test
-run1: re
-	./push_swap 8 6 5 3 2 1
-
-# La regla run2 ejecuta el ejecutable con el segundo test
-run2: re
+# La regla run ejecuta el ejecutable con el test del subject
+run: re
+	@echo "$(CYAN)Ejecutando $(NAME)...$(RESET)"
 	./push_swap 2 1 3 6 5 8
 
-# La regla run3 ejecuta el ejecutable con el tercer test
-run3: re
-	./push_swap 6 8 1 2 5 3
 	
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
