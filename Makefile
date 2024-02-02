@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 01:16:39 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/02 01:21:36 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,7 @@ re: fclean all
 git:
 	git add .
 	git status
-	@read -p "$(BOLD_GREEN)Quieres continuar? [$(RESET)$(BOLD_GREEN)y$(RESET)$(BOLD_RED)/$(RESET)$(BOLD_RED)n$(RESET)$(BOLD_GREEN)]: $(RESET)" answer; \
+	@read -p "Quieres continuar? [y/n]: " answer; \
 	if [ "$$answer" = "y" ]; then \
 		read -p "Mensaje para el commit: " message; \
 		git commit -m "$$message"; \
