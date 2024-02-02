@@ -6,13 +6,13 @@
 /*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/02 00:07:56 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/02 01:58:49 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// ! ELIMINAR ESTA FUNCION
+// ! ELIMINAR ESTA FUNCION!
 static void	print_bits(int value)
 {
 	int		i;
@@ -28,7 +28,7 @@ static void	print_bits(int value)
 	printf("\n");
 }
 
-// ! ELIMINAR ESTA FUNCION
+// ! ELIMINAR ESTA FUNCION!
 void	ft_print_stack_info(t_list *lst, char c)
 {
 	t_list	*current;
