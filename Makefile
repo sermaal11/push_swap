@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 01:26:01 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/02 01:36:19 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ fclean: clean
 re: fclean all
 
 # La regla git agrega, hace commit y hace push
-git:
+add:
 	git add .
 	git status
 	@read -p "Quieres continuar? [y/n]: " answer; \
