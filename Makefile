@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 01:23:37 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/02 01:26:01 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,6 +104,7 @@ git:
 		git commit -m "$$message"; \
 		git push; \
 	fi
+	@echo "$(BOLD_GREEN)(⌐■_■) ¡¡¡git push realizado!!! (⌐■_■)$(RESET)"
 
 # La regla test ejecuta el script de prueba
 test: re
