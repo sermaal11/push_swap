@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/02 12:24:05 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:38:17 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,13 @@ static int	ft_bitwise(int lst_size)
 
 void	ft_radix(t_list **stack_a, t_list **stack_b)
 {
-	int i;
+	int	i;
 	int	j;
-	int lst_size;
-	
+	int	lst_size;
+
 	lst_size = ft_lstsize(*stack_a);
 	i = 0;
 	ft_index_nodes(stack_a);
-	//ft_print_stack_info(*stack_a, 'a');
 	while (i < ft_bitwise(lst_size))
 	{
 		j = 0;

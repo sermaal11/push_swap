@@ -6,7 +6,7 @@
 /*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:38:40 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/01 15:13:51 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:39:12 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ int	ft_check_ordered_yet(t_list **stack_a)
 	while (temp->next != NULL)
 	{
 		if (temp->content > temp->next->content)
-			return (1);
+			return (0);
 		temp = temp->next;
 	}
 	ft_stack_clear(stack_a);
-	return (0);
+	return (1);
 }
 
 /*
@@ -128,25 +128,25 @@ void	ft_check_input(int argc, char **argv, t_list **stack_a)
 	int		y;
 	char	**matrix;
 
-	i = 1;
-	while (i != argc)
+	i = 0;
+	while (++i != argc)
 	{
 		matrix = ft_split(argv[i], ' ');
-		y = 0;
-		if (matrix[y] == NULL)
+		y = -1;
+		if (matrix[0] == NULL)
 			ft_error();
-		while (matrix[y] != NULL)
+		while (matrix[++y] != NULL)
 		{
 			ft_check_string(matrix[y]);
-			if (ft_atol(matrix[y]) == 0 && matrix[y][0] != '0')
+			if ((ft_atol(matrix[y]) == 0
+					&& ((matrix[y][0] != '-' || matrix[y][0] != '+')
+				&& matrix[y][1] != '0')) && matrix[y][0] != '0')
 				ft_error();
 			if (ft_atol(matrix[y]) > INT_MAX || ft_atol(matrix[y]) < INT_MIN)
 				ft_error();
 			ft_add_number_to_node(ft_atol(matrix[y]), stack_a);
 			free(matrix[y]);
-			y++;
 		}
-		i++;
 		free(matrix);
 	}
 }
