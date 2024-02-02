@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_radix.c                                         :+:      :+:    :+:   */
+/*   ft_radix_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/02 00:08:47 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/02 12:24:05 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,41 @@ static void	ft_index_nodes(t_list **stack)
 	}
 }
 
-void	ft_radix(t_list **stack)
+static int	ft_bitwise(int lst_size)
 {
-	ft_index_nodes(stack);
-	ft_print_stack_info(*stack, 'a');
+	int	i;
+
+	i = 0;
+	while ((lst_size - 1) >> i != 0)
+	{
+		i++;
+	}
+	return (i);
+}
+
+void	ft_radix(t_list **stack_a, t_list **stack_b)
+{
+	int i;
+	int	j;
+	int lst_size;
+	
+	lst_size = ft_lstsize(*stack_a);
+	i = 0;
+	ft_index_nodes(stack_a);
+	//ft_print_stack_info(*stack_a, 'a');
+	while (i < ft_bitwise(lst_size))
+	{
+		j = 0;
+		while (j < lst_size)
+		{
+			if (((*stack_a)->index >> i & 1) == 1)
+				ft_rotate_up(stack_a, "ra\n");
+			else if (((*stack_a)->index >> i & 1) == 0)
+				ft_push(stack_a, stack_b, "pb\n");
+			j++;
+		}
+		while (ft_lstsize(*stack_b) != 0)
+			ft_push(stack_b, stack_a, "pa\n");
+		i++;
+	}
 }

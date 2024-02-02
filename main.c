@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/02 10:20:24 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/02 12:23:57 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ int	main(int argc, char **argv)
 		if (ft_lstsize(stack_a) <= 5)
 			ft_hardcoded(&stack_a, &stack_b, ft_lstsize(stack_a));
 		if (ft_lstsize(stack_a) > 5)
-			ft_radix(&stack_a);
+			ft_radix(&stack_a, &stack_b);
 	}
+	//ft_print_stack_info(stack_a, 'a');
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);

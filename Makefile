@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
+#    By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 10:20:57 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/02 12:29:42 by smarin-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,7 +121,7 @@ valgrind: all
 # La regla run ejecuta el ejecutable con el test del subject
 run: re
 	@echo "$(CYAN)Ejecutando $(NAME)...$(RESET)"
-	./push_swap 2 1 3 6 5 8
+	./push_swap 5 47 54 2 33 55 896 4215
 
 	
 

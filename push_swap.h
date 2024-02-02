@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:28:20 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/02 00:04:42 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/02 11:48:50 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_rotate_up_rr(t_list **stack_a, t_list **stack_b);
 // ft_rotate_down_rrr mueve el ultimo nodo de las dos listas al principio.
 void	ft_rotate_down_rrr(t_list **stack_a, t_list **stack_b);
 // ft_radix ordena la lista mediante el algoritmo radix.
-void	ft_radix(t_list **stack);
+void	ft_radix(t_list **stack, t_list **stack_b);
 // ! ELIMINAR ESTA FUNCION
 void	ft_print_stack_info(t_list *lst, char c);
 
