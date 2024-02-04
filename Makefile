@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/04 01:04:11 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/04 01:18:12 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,9 @@ git:
 		read -p "Mensaje para el commit: " message; \
 		git commit -m "$$message"; \
 		git push; \
-		@echo "$(BOLD_GREEN)(⌐■_■) ¡¡¡git push realizado!!! (⌐■_■)$(RESET)"; \
+		@echo "$(BOLD_GREEN)(⌐■_■) ¡¡¡Git push realizado!!! (⌐■_■)$(RESET)"; \
+	else \
+		echo "$(BOLD_RED)(҂◡_◡) ¡¡¡Git push no realizado!!! (҂◡_◡)!!!$(RESET)"; \
 	fi
 
 # La regla test ejecuta el script de prueba
