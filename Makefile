@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/04 01:28:09 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/04 01:30:27 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ $(OBJDIR):
 	mkdir $(OBJDIR)
 	@echo "$(GREEN)Directorio de objetos creado!$(RESET)"
 	@echo "$(CYAN)Creando objetos...$(RESET)"
+
 # La regla clean elimina todos los archivos objeto y el directorio
 clean:
 	@echo "$(RED)Eliminando archivos objeto...$(RESET)"
