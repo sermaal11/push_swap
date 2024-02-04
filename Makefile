@@ -6,7 +6,7 @@
 #    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/04 01:18:12 by sergio           ###   ########.fr        #
+#    Updated: 2024/02/04 01:19:34 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,6 @@ run5 run6 run10 run50 run100 run500:
 	@read -p "Presione enter para continuar con el siguiente test o Ctrl+C para cancelar..."
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re git test valgrind run run5 run6 run10 run50 run100 run500
 
 #------------------------------------------------------------------------------#
