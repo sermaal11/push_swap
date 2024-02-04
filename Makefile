@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+         #
+#    By: sergio <sergio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 12:32:56 by smarin-a          #+#    #+#              #
-#    Updated: 2024/02/02 12:29:42 by smarin-a         ###   ########.fr        #
+#    Updated: 2024/02/04 01:04:11 by sergio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,8 +103,8 @@ git:
 		read -p "Mensaje para el commit: " message; \
 		git commit -m "$$message"; \
 		git push; \
+		@echo "$(BOLD_GREEN)(⌐■_■) ¡¡¡git push realizado!!! (⌐■_■)$(RESET)"; \
 	fi
-	@echo "$(BOLD_GREEN)(⌐■_■) ¡¡¡git push realizado!!! (⌐■_■)$(RESET)"
 
 # La regla test ejecuta el script de prueba
 test: re
@@ -114,16 +114,20 @@ test: re
 	cd test; ./push_swap_test.sh
 
 # La regla valgrind ejecuta valgrind en el ejecutable
-valgrind: all
+valgrind: re
 	@echo "$(CYAN)Ejecutando Valgrind en $(NAME)...$(RESET)"
 	valgrind --leak-check=full ./$(NAME) 2 1 3 6 5 8
 
-# La regla run ejecuta el ejecutable con el test del subject
-run: re
-	@echo "$(CYAN)Ejecutando $(NAME)...$(RESET)"
-	./push_swap 5 47 54 2 33 55 896 4215
+# La regla 'run' ejecuta todas las pruebas
+run: re run5 run6 run10 run50 run100 run500
 
-	
+run5 run6 run10 run50 run100 run500:
+	@NUM=$$(echo $@ | grep -o -E '[0-9]+'); \
+	echo "$(CYAN)Ejecutando $(NAME) con $$NUM numeros...$(RESET)"; \
+	ARG=`ruby -e "puts (1..$$NUM).to_a.shuffle.join(' ')"`; \
+	echo "Lista de numeros: $$ARG"; \
+	RESULT=$$(./$(NAME) $$ARG | tee /dev/tty | wc -l); echo $$((RESULT - (($$NUM * 2) + 6)))
+	@read -p "Presione enter para continuar con el siguiente test o Ctrl+C para cancelar..."
 
 # La regla .PHONY indica que no hay un archivo llamado all, clean, fclean o re
 .PHONY: all clean fclean re

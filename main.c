@@ -3,14 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:29:42 by sergio            #+#    #+#             */
-/*   Updated: 2024/02/02 12:41:26 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:57:53 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	print_bits(int value)
+{
+	int		i;
+	char	bit;
+
+	i = 7;
+	while (i >= 0)
+	{
+		bit = (value >> i & 1) + '0';
+		write(1, &bit, 1);
+		i--;
+	}
+	printf("\n");
+	fflush(stdout);
+}
+
+void	ft_print_stack_info(t_list *lst, char c)
+{
+	t_list	*current;
+	int		count;
+
+	current = lst;
+	count = 0;
+	printf("\nstack %c\n", c);
+	while (current != NULL)
+	{
+		printf("nodo %d -> Content %d -> Index %d -> Index.bits ",
+			count, current->content, current->index);
+		fflush(stdout);
+		print_bits(current->index);
+		current = current->next;
+		count++;
+	}
+	printf("\n");
+	fflush(stdout);
+}
 
 /*
 En el main se hace lo siguiente:
@@ -38,9 +75,13 @@ int	main(int argc, char **argv)
 		if (ft_check_ordered_yet(&stack_a) == 1)
 			return (0);
 		if (ft_lstsize(stack_a) <= 5)
+		{
+			ft_print_stack_info(stack_a, 'a');
 			ft_hardcoded(&stack_a, &stack_b, ft_lstsize(stack_a));
+		}
 		if (ft_lstsize(stack_a) > 5)
 			ft_radix(&stack_a, &stack_b);
+		ft_print_stack_info(stack_a, 'a');
 	}
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);

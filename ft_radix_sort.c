@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/02 12:38:17 by smarin-a         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:58:02 by sergio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ static void	ft_index_nodes(t_list **stack)
 	}
 }
 
+/*
+En ft_bitwise se hace lo siguiente:
+1.	Se inicializa i a 0.
+2.	Dentro del bucle while se desplaza el tamaño de la lista - 1 i veces. Esto 
+	se hace para obtener el numero de bits necesarios para representar el 
+	tamaño de la lista.
+3.	Se devuelve i.
+*/
 static int	ft_bitwise(int lst_size)
 {
 	int	i;
@@ -62,6 +70,18 @@ static int	ft_bitwise(int lst_size)
 	return (i);
 }
 
+/*
+En ft_radix se hace lo siguiente:
+1.	Se inicializan las variables i, j y lst_size.
+2.	Se iguala lst_size a ft_lstsize. Esto se hace para obtener el tamaño de la 
+	lista.
+3.	Se iguala i a 0.
+4.	Se llama a ft_index_nodes. Esto se hace para obtener el indice de cada nodo.
+5.	Se recorre la lista y se iguala j a 0.
+6.	Se recorre la lista y si el bit i del indice del nodo es 1, se llama a 
+	ft_rotate_up, si es 0 se llama a ft_push.
+7.	Se recorre la lista b y se llama a ft_push hasta que la lista b este vacia.
+*/
 void	ft_radix(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
@@ -71,6 +91,7 @@ void	ft_radix(t_list **stack_a, t_list **stack_b)
 	lst_size = ft_lstsize(*stack_a);
 	i = 0;
 	ft_index_nodes(stack_a);
+	ft_print_stack_info(*stack_a, 'a');
 	while (i < ft_bitwise(lst_size))
 	{
 		j = 0;
