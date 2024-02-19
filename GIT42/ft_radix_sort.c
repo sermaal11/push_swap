@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio <sergio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smarin-a <smarin-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:17:51 by smarin-a          #+#    #+#             */
-/*   Updated: 2024/02/04 21:03:26 by sergio           ###   ########.fr       */
+/*   Updated: 2024/02/19 17:45:38 by smarin-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_radix(t_list **stack_a, t_list **stack_b)
 	lst_size = ft_lstsize(*stack_a);
 	i = 0;
 	ft_index_nodes(stack_a);
-	ft_print_stack_info(*stack_a, 'a');
 	while (i < ft_bitwise(lst_size))
 	{
 		j = 0;
